@@ -1,0 +1,3 @@
+snackbar.service('snackService', $http){
+	
+}
