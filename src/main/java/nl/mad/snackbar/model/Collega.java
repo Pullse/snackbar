@@ -1,6 +1,5 @@
 package nl.mad.snackbar.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
  * Class for Collega object.
@@ -12,7 +11,6 @@ public class Collega {
 
     private String naam;
 
-    @JsonBackReference
     private Snack snack;
 
     public Collega(long id, String naam, Snack snack) {

@@ -32,7 +32,7 @@ public class SnackController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public List<Snack> getAllSnacks() {
-        return snackService.getAllSnacks();
+        return snackService.findAll();
     }
 
 }
