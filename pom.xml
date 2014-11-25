@@ -47,12 +47,6 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
         
         <!-- Spring 4 dependencies -->
         <dependency>
@@ -106,62 +100,8 @@
             <version>${javax.servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
-        
     </dependencies>
-    
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler.version}</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <debug>true</debug>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin.version}</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <useDefaultManifestFile>true</useDefaultManifestFile>
-                    <archive>
-                        <forced>false</forced>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                        </manifest>
-                    </archive>
-                </configuration>    
-            </plugin>
-            
-                    <!-- Generate assembly's for installation -->
-                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <version>${maven-assembly-plugin.version}</version>                      
-                        <executions>
-                            <!-- Generates distribution zip with war, deployment document and database migration script -->
-                            <execution>
-                                <id>make-distribution</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                                <configuration>
-                                    <appendAssemblyId>false</appendAssemblyId>
-                                    <descriptors>
-                                        <descriptor>src/main/assembly/distribution-zip.xml</descriptor>
-                                    </descriptors>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
 
-        </plugins>
-    </build>
-    
     <profiles>
         <profile>
             <id>tomcat</id>
