@@ -1,8 +1,9 @@
-package nl.mad.snackbar;
+package nl.mad.snackbar.service;
 
 import java.util.List;
 
 import nl.mad.snackbar.model.Snack;
+import nl.mad.snackbar.repository.SnackRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

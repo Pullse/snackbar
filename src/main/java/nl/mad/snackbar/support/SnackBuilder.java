@@ -1,7 +1,7 @@
 package nl.mad.snackbar.support;
 
-import nl.mad.snackbar.SnackService;
 import nl.mad.snackbar.model.Snack;
+import nl.mad.snackbar.service.SnackService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

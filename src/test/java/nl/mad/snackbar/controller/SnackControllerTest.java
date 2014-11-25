@@ -1,4 +1,4 @@
-package nl.mad.snackbar;
+package nl.mad.snackbar.controller;
 
 public class SnackControllerTest {
 
