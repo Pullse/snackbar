@@ -40,8 +40,15 @@
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson-databind.version}</version>
         </dependency>
-       
-       
+
+        <!-- Jmockit -->
+        <dependency>
+            <groupId>com.googlecode.jmockit</groupId>
+            <artifactId>jmockit</artifactId>
+            <version>1.7</version>
+        </dependency>
+
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -93,7 +100,15 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
         </dependency>
-        
+
+        <!-- Jayway -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>0.8.1</version>
+        </dependency>
+
+
         <!-- Tomcat Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>

@@ -25,6 +25,6 @@ public class SnackServiceTest extends AbstractSpringContextTest {
         snackBuilder.setNaam("Frikandel").create();
         List<Snack> snacks = snackService.findAll();
         assertEquals(4, snacks.size());
-        assertEquals("Frikandel", snacks.get(0).getNaam());
+        assertEquals("Broodje kipsate", snacks.get(0).getNaam());
     }
 }
