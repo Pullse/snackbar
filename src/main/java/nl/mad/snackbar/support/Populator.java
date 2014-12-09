@@ -16,5 +16,10 @@ public class Populator {
         snackBuilder.setNaam("Broodje kipsate").create();
         snackBuilder.setNaam("Kroket").create();
         snackBuilder.setNaam("Broodje frikandel").create();
+        snackBuilder.setNaam("Broodje bal").create();
+        snackBuilder.setNaam("Ei met Ui").create();
+        snackBuilder.setNaam("Broodje kroket").create();
+        snackBuilder.setNaam("Losse frikandel").create();
+        snackBuilder.setNaam("Losse kroket").create();
     }
 }

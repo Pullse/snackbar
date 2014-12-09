@@ -22,8 +22,8 @@ public class SnackController {
     private final SnackService snackService;
 
     /**
-     * Creates an instance of SynchController.
-     * @param synchService SynchService
+     * Creates an instance of SnackController.
+     * @param snackService SnackService
      */
     @Autowired
     public SnackController(SnackService snackService) {
@@ -32,7 +32,7 @@ public class SnackController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<Snack> getAllSnacks() {
+    public List<Snack> findAllSnacks() {
         return snackService.findAll();
     }
 
