@@ -7,4 +7,4 @@ snackbar.factory('snackService', function($http){
 
 	return instance;
 	
-)};
+});

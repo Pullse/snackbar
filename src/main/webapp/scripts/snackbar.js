@@ -1,1 +1,2 @@
-var snackbar = angular.module('snackbar', ['ngRoute']);
+var snackbar = angular.module('snackbar', []);
+

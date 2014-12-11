@@ -2,20 +2,25 @@
 <html data-ng-app="snackbar">
 <head>
 	<meta charset = "utf-8">
-	<title>Oehoe</title>
+	<title>Snackbar - app</title>
 	<script type="text/javascript" src="vendors/angular.min.js"></script>
     <script type="text/javascript" src="vendors/angular-animate.min.js"></script>
     <script type="text/javascript" src="vendors/angular-cookies.min.js"></script>
     <script type="text/javascript" src="vendors/angular-route.min.js"></script>
 
- 	<script src="scripts.services/snackService.js"></script>
+	<script src="scripts/snackbar.js"></script>
 
-    <script src="scripts/controllers/SnackController.js"></script>
+	<script src="scripts/controllers/snack-controller.js"></script>
+
+ 	<script src="scripts/services/snack-service.js"></script>
+
+    
    
 
 
 </head>
-<body>
+<body ng-controller="SnackController">
+	<h1>Hoi</h1>
 	<ul>
 		<li ng-repeat="snack in snacks">
 			<span>{{snack.naam}}</span>			
