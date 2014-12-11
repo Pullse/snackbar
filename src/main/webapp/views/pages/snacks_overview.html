@@ -1,0 +1,15 @@
+<div data-ng-include="'views/partials/header.html'"></div>
+<div class="container" ng-controller="SnackController">
+	<div class="row">
+		<div class="col-md-2">
+			<h1>Overzicht snacks</h1>
+		</div>
+		<div class="col-md-10">
+			<ul>
+				<li ng-repeat="snack in snacks">
+					{{snack.naam}}		
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

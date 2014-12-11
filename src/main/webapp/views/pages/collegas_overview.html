@@ -1,0 +1,20 @@
+<div data-ng-include="'views/partials/header.html'"></div>
+<div class="container" ng-controller="CollegaController">
+	<div class="row">
+		<div class="col-md-2">
+			<h1>Collegas met hun snacks</h1>
+		</div>
+		<div class="col-md-10">
+			<ul>
+				<li ng-repeat="collega in collegas">
+					{{collega.naam}}
+					<ul>
+						<li>
+							{{collega.snack.naam}}
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
