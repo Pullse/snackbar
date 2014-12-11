@@ -6,5 +6,5 @@ snackbar.controller('SnackController', ['$scope', 'snackService',
 				$scope.snacks = snacks;
 				console.log(snacks);
 			});
-		}
+		};
 	}]);
