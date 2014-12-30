@@ -10,9 +10,6 @@ snackbar.factory('snackService', function($http){
 	};
 
 	instance.deleteSnack = function(snack){
-		console.log(angular.toJson(snack));
-		console.log(snack);
-
 		return $http["delete"]("api/snacks",
                         {
                             headers: { 'Content-type': 'application/json' },
@@ -20,7 +17,7 @@ snackbar.factory('snackService', function($http){
                         });
 
 		//return $http.delete('api/snacks', angular.toJson(snack));
-	}
+	};
 
 	return instance;
 	

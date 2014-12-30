@@ -9,6 +9,15 @@ snackbar.factory('collegaService', function($http){
 		return $http.post('api/collegas', collega);
 	};
 
+	instance.deleteCollega = function(collega){
+		return $http["delete"]("api/collegas",
+                        {
+                            headers: { 'Content-type': 'application/json' },
+                            data: collega
+                        });
+
+	};
+
 	return instance;
 	
 });

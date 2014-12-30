@@ -19,4 +19,10 @@ snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackServ
 			});
 		};
 		$scope.retrieveAllSnacks();
+
+		$scope.deleteCollega = function(collega){;
+			collegaService.deleteCollega(collega).success(function(collega){
+				$scope.showCollegas();
+			});
+		}
 	}]);
