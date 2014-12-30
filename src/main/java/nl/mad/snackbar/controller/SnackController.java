@@ -39,8 +39,8 @@ public class SnackController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public void createSnack(@RequestBody Snack snack){
-        snackService.createSnack(snack);
+    public Snack createSnack(@RequestBody Snack snack){
+        return snackService.createSnack(snack);
     }
 
     @RequestMapping(method = RequestMethod.DELETE)

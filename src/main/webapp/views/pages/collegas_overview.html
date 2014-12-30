@@ -3,18 +3,45 @@
 	<div class="row">
 		<div class="col-md-2">
 			<h1>Collegas met hun snacks</h1>
+			<form data-ng-submit="saveCollega(collega)">
+				Collega naam:
+				<input type="text" data-ng-model="collega.naam">
+				Snack:
+					<select class="form-control input-sm" 
+                                name="collega.snack.id"
+                                id="snackId" 
+                                data-ng-model="collega.snack.id" 
+                                data-ng-options="snack.id as snack.naam for snack in snacks">
+                            <option value="">-- Geen Snack --</option>
+                	</select>
+				<button type="submit">
+					Collega aanmaken
+				</button>
+			</form>
 		</div>
 		<div class="col-md-10">
-			<ul>
-				<li ng-repeat="collega in collegas">
-					{{collega.naam}}
-					<ul>
-						<li>
-							{{collega.snack.naam}}
-						</li>
-					</ul>
-				</li>
-			</ul>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Naam</th>
+					<th>Snack</th>
+					<th>Actie</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="collega in collegas">
+					<td>
+						{{collega.naam}}
+					</td>
+					<td>
+						{{collega.snack.naam}}
+					</td>
+					<td>
+						<button class="btn btn-danger btn-xs" data-ng-click="deleteCollega(collega)"><i class="glyphicon glyphicon-trash"></i></button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		</div>
 	</div>
 </div>

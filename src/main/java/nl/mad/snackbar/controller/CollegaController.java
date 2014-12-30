@@ -1,9 +1,11 @@
 package nl.mad.snackbar.controller;
 
 import nl.mad.snackbar.model.Collega;
+import nl.mad.snackbar.model.Snack;
 import nl.mad.snackbar.service.CollegaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,5 +30,18 @@ public class CollegaController {
     @ResponseBody
     public List<Collega> findAllCollegas() {
         return collegaService.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    public Collega createCollega(@RequestBody Collega collega) {
+        return collegaService.createCollega(collega);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseBody
+    public Collega deleteCollega(@RequestBody Collega collega){
+        collegaService.deleteCollega(collega);
+        return collega;
     }
 }

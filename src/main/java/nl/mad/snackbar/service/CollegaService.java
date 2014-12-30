@@ -3,6 +3,7 @@ package nl.mad.snackbar.service;
 import java.util.List;
 
 import nl.mad.snackbar.model.Collega;
+import nl.mad.snackbar.model.Snack;
 import nl.mad.snackbar.repository.CollegaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,14 @@ public class CollegaService {
 
     public List<Collega> findBySnackId(Long snackId) {
         return collegaRepository.findBySnackId(snackId);
+    }
+
+    public Collega createCollega(Collega collega) {
+        return collegaRepository.save(collega);
+    }
+
+    public void deleteCollega(Collega collega){
+        collegaRepository.delete(collega);
     }
 
 }
