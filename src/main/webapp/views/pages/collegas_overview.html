@@ -3,9 +3,10 @@
 	<div class="row">
 		<div class="col-md-2">
 			<h1>Collegas met hun snacks</h1>
-			<form data-ng-submit="saveCollega(collega)">
+			<form name="collegaForm" data-ng-submit="saveCollega(collega)">
 				Collega naam:
-				<input type="text" data-ng-model="collega.naam">
+				<input type="text" data-ng-model="collega.naam" required>
+				<p></p>
 				Snack:
 					<select class="form-control input-sm" 
                                 name="collega.snack.id"
@@ -14,7 +15,7 @@
                                 data-ng-options="snack.id as snack.naam for snack in snacks">
                             <option value="">-- Geen Snack --</option>
                 	</select>
-				<button type="submit">
+				<button data-ng-disable="collegaForm.$invalid" type="submit">
 					Collega aanmaken
 				</button>
 			</form>
@@ -42,6 +43,7 @@
 				</tr>
 			</tbody>
 		</table>
+		<button class="btn btn-success btn-m">Genereer boodschappenlijst</button>
 		</div>
 	</div>
 </div>
