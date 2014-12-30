@@ -6,4 +6,16 @@ snackbar.controller('SnackController', ['$scope', 'snackService',
 			});
 		};
 		$scope.showSnacks();
+
+		$scope.saveSnack = function(snack){
+			snackService.postSnack(snack).success(function(snack){
+				$scope.showSnacks();
+			});
+		};
+
+		$scope.deleteSnack = function(snack){;
+			snackService.deleteSnack(snack).success(function(snack){
+				$scope.showSnacks();
+			});
+		}
 	}]);

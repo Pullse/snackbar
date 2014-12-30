@@ -24,7 +24,12 @@ public class SnackService {
         return snackRepository.findAll();
     }
 
-    public Snack create(Snack snack) {
+    public Snack createSnack(Snack snack) {
         return snackRepository.save(snack);
     }
+
+    public void deleteSnack(Snack snack){
+        snackRepository.delete(snack);
+    }
+
 }

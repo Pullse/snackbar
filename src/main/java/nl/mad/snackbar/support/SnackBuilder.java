@@ -27,7 +27,7 @@ public class SnackBuilder {
     }
 
     public Snack create() {
-        Snack snack = snackService.create(this.snack);
+        Snack snack = snackService.createSnack(this.snack);
         this.snack = null;
         return snack;
     }

@@ -1,15 +1,35 @@
 <div data-ng-include="'views/partials/header.html'"></div>
-<div class="container" ng-controller="SnackController">
+<div class="container" data-ng-controller="SnackController">
 	<div class="row">
 		<div class="col-xs-12 col-md-2">
-			<h1>Overzicht snacks</h1>
+			<h1>Nieuwe snack</h1>
+			<form data-ng-submit="saveSnack(snack)">
+  				Maak nieuwe snack aan:
+  				<input type="text" data-ng-model="snack.naam"/>
+  				<button type="submit">
+                    Snack aanmaken
+                </button>
+			</form>
 		</div>
-		<div class="col-xs-12 col-md-10">
-			<ul>
-				<li ng-repeat="snack in snacks">
-					{{snack.naam}}		
-				</li>
-			</ul>
+		<div class="col-xs-12 col-md-8">
+			<H2>Snack Overzicht</H2>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Naam</th>
+						<th>Actie</th>
+					</tr>
+				</thead>
+			<tbody>
+				<tr data-ng-repeat="snack in snacks">
+					<td>
+						{{snack.naam}}
+					</td>
+					<td>
+						<button class="btn btn-danger btn-xs" data-ng-click="deleteSnack(snack)"><i class="glyphicon glyphicon-trash"></i></button>
+					</td>
+				</tr>
+			</tbody>
 		</div>
 	</div>
 </div>
