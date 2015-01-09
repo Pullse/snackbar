@@ -1,5 +1,5 @@
-snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackService', 
-	function($scope, collegaService, snackService){
+snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackService', 'modalService',
+	function($scope, collegaService, snackService, modalService){
 		$scope.showCollegas = function(){
 			collegaService.getAllCollegas(function(collegas){
 				$scope.collegas = collegas;
@@ -20,9 +20,17 @@ snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackServ
 		};
 		$scope.retrieveAllSnacks();
 
-		$scope.deleteCollega = function(collega){;
+		$scope.deleteCollega = function(collega){
 			collegaService.deleteCollega(collega).success(function(collega){
 				$scope.showCollegas();
 			});
-		}
+		};
+
+		$scope.openSnackSummary = function(){
+			modalService.openModal("lg", "snackSummary", $scope);
+		};
+
+		$scope.dismissSnackSummaryModal = function () {
+            modalService.dismissModal();
+        }
 	}]);
