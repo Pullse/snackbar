@@ -15,9 +15,17 @@ snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackServ
 			});
 		};
 
-		$scope.deleteCollega = function(collega, index){;
+		$scope.deleteCollega = function(collega, index){
 			collegaService.deleteCollega(collega).success(function(collega){
 				$scope.collegas.splice(index, 1);
 			});
-		}
+		};
+
+		$scope.openSnackSummary = function(){
+			modalService.openModal("lg", "snackSummary", $scope);
+		};
+
+		$scope.dismissSnackSummaryModal = function () {
+            modalService.dismissModal();
+        }
 	}]);
