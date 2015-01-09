@@ -1,5 +1,5 @@
-snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackService', 
-	function($scope, collegaService, snackService){
+snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackService', 'modalService', 
+	function($scope, collegaService, snackService, modalService){
 		//getCollegas
 		collegaService.getAllCollegas().success(function (collegas){
 			$scope.collegas = collegas;
@@ -21,7 +21,7 @@ snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackServ
 			});
 		};
 
-		$scope.openSnackSummary = function(){
+		$scope.openSnackSummaryModal = function(){
 			modalService.openModal("lg", "snackSummary", $scope);
 		};
 
