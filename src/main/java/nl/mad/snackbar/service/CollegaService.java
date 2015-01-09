@@ -6,6 +6,7 @@ import nl.mad.snackbar.model.Collega;
 import nl.mad.snackbar.model.Snack;
 import nl.mad.snackbar.repository.CollegaRepository;
 
+import nl.mad.snackbar.repository.SnackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class CollegaService {
 
     private final CollegaRepository collegaRepository;
+
+    @Autowired
+    private SnackRepository snackRepository;
 
     @Autowired
     public CollegaService(CollegaRepository collegaRepository) {

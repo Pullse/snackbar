@@ -1,28 +1,23 @@
 snackbar.controller('CollegaController', ['$scope', 'collegaService', 'snackService', 
 	function($scope, collegaService, snackService){
-		$scope.showCollegas = function(){
-			collegaService.getAllCollegas(function(collegas){
-				$scope.collegas = collegas;
-			});
-		};
-		$scope.showCollegas();
+		//getCollegas
+		collegaService.getAllCollegas().success(function (collegas){
+			$scope.collegas = collegas;
+		});
+
+		snackService.getAllSnacks(function(snacks){
+			$scope.snacks = snacks;
+		});
 
 		$scope.saveCollega = function(collega){
 			collegaService.postCollega(collega).success(function(collega){
-				$scope.showCollegas();
+				$scope.collegas.push(collega);
 			});
 		};
 
-		$scope.retrieveAllSnacks = function(){
-			snackService.getAllSnacks(function(snacks){
-				$scope.snacks = snacks;
-			});
-		};
-		$scope.retrieveAllSnacks();
-
-		$scope.deleteCollega = function(collega){;
+		$scope.deleteCollega = function(collega, index){;
 			collegaService.deleteCollega(collega).success(function(collega){
-				$scope.showCollegas();
+				$scope.collegas.splice(index, 1);
 			});
 		}
 	}]);

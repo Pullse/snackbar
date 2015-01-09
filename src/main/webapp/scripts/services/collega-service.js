@@ -1,8 +1,8 @@
 snackbar.factory('collegaService', function($http){
 	var instance = {};
 
-	instance.getAllCollegas = function(success){
-		return $http.get('http://localhost:8060/api/collegas').success(success);
+	instance.getAllCollegas = function(){
+		return $http.get('api/collegas');
 	};
 
 	instance.postCollega = function(collega){
@@ -15,7 +15,6 @@ snackbar.factory('collegaService', function($http){
                             headers: { 'Content-type': 'application/json' },
                             data: collega
                         });
-
 	};
 
 	return instance;

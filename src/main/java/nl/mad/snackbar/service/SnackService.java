@@ -20,6 +20,10 @@ public class SnackService {
         this.snackRepository = snackRepository;
     }
 
+    public Snack findSnack(Long id){
+        return snackRepository.findOne(id);
+    }
+
     public List<Snack> findAll() {
         return snackRepository.findAll();
     }

@@ -15,8 +15,6 @@ snackbar.factory('snackService', function($http){
                             headers: { 'Content-type': 'application/json' },
                             data: snack
                         });
-
-		//return $http.delete('api/snacks', angular.toJson(snack));
 	};
 
 	return instance;
